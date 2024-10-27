@@ -83,6 +83,24 @@ public:
         std::cout << "StateMachine: Destructor" << std::endl;
     }
 
+    StateMachine(const StateMachine& source){
+        std::cout << "StateMachine: Copy Constructor" << std::endl;
+    }
+
+    StateMachine(StateMachine&& source) {
+        std::cout << "StateMachine: Move Constructor" << std::endl;
+    }
+
+    StateMachine& operator=(const StateMachine& source) {
+        std::cout << "StateMachine: Copy Assignment" << std::endl;
+        return *this;
+    }
+
+    StateMachine& operator=(StateMachine&& source) {
+        std::cout << "StateMachine: Move Assignment" << std::endl;
+        return *this;
+    }
+
     void start_charging() {
         current_state_->sleep();
     }
@@ -112,10 +130,28 @@ private:
     std::unique_ptr<RobotState> current_state_;
 };
 
+inline void take_machine(StateMachine robot) {
+    std::cout << "Inside take_machine" << std::endl;
 
+}
 
+inline void rule_of_five() {
+    StateMachine robot;
+    StateMachine robot2(robot);
 
+    StateMachine robot3;
+    StateMachine robot4(std::move(robot3));
 
+    StateMachine robot5;
+    StateMachine robot6;
+    robot6 = robot5;
+
+    StateMachine robot7;
+    StateMachine robot8;
+    robot8 = std::move(robot7);
+
+    take_machine(robot);
+}
 
 
 

@@ -40,7 +40,7 @@ void state_machine_test() {
     }
 }
 
-void welcome_message() {
+void welcome_menu() {
     std::cout << menu << std::endl;
 
     while (true) {
@@ -58,7 +58,7 @@ void welcome_message() {
 
 int main() {
 
-    welcome_message();
-    
+    welcome_menu();
+
     return 0;
 }
