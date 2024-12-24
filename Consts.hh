@@ -7,5 +7,3 @@ std::string menu = "\nWelcome to Design Patterns in Modern C++\n"
                    "1. State Machine\n"
                    "type Exit to quit\n";
 
-
-

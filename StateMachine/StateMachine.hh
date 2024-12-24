@@ -155,5 +155,3 @@ inline void rule_of_five() {
 
 void state_machine_test();
 
-
-
