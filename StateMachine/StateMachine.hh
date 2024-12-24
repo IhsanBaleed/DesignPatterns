@@ -153,7 +153,7 @@ inline void rule_of_five() {
     take_machine(robot);
 }
 
-
+void state_machine_test();
 
 
 
