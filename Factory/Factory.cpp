@@ -14,8 +14,9 @@ void factory_test() {
             f = std::make_unique<SecondProductFactory>();
         } else if (input == "exit") break;
 
-        std::shared_ptr<Product> p = f->get_product();
+        f->generate_products(1);
 
+        std::shared_ptr<Product> p = f->get_a_product();
         p->display_price();
         p->state_type();
     }

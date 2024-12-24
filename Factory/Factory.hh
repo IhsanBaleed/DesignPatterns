@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <memory>
+#include <list>
 
 class Product {
 
@@ -47,7 +48,7 @@ class SecondProduct : public Product{
 class Factory {
 
 protected:
-  std::shared_ptr<Product> p_ptr;
+  std::list<std::shared_ptr<Product>> pool;
 
 public:
 
@@ -58,17 +59,28 @@ public:
     std::cout << "Factory Destructor" << std::endl;
   }
 
-  std::shared_ptr<Product> get_product() {
-    return p_ptr; 
-  }
+  virtual void generate_products(int num) = 0;
+  virtual std::shared_ptr<Product> get_a_product() = 0;
 
 };
 
 class FirstProductFactory : public Factory {
 
 public:
-  FirstProductFactory() {
-    p_ptr = std::make_shared<FirstProduct>();
+
+  void generate_products(int num) override {
+    for (int i=0; i<num; i++) {
+      pool.push_back(std::make_shared<FirstProduct>());
+    }
+  }
+
+  std::shared_ptr<Product> get_a_product() {
+    if (pool.size() > 0) {
+      std::shared_ptr<Product> p = pool.front();
+      pool.pop_front();
+      return p;
+    } 
+    return nullptr;
   }
 
 };
@@ -76,8 +88,20 @@ public:
 class SecondProductFactory : public  Factory {
 
 public:
-  SecondProductFactory() {
-    p_ptr = std::make_shared<SecondProduct>();
+
+  void generate_products(int num) override {
+    for (int i=0; i<num; i++) {
+      pool.push_back(std::make_shared<SecondProduct>());
+    }
+  }
+
+  std::shared_ptr<Product> get_a_product() {
+    if (pool.size() > 0) {
+      std::shared_ptr<Product> p = pool.front();
+      pool.pop_front();
+      return p;
+    } 
+    return nullptr;
   }
 
 };
