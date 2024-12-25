@@ -4,10 +4,12 @@ project(DesignPattern)
 
 add_subdirectory(StateMachine)
 add_subdirectory(Factory)
+add_subdirectory(Decorator)
 
 add_executable(DesignPattern main.cpp)
 
 target_link_libraries(DesignPattern PUBLIC 
                                     Factory
-                                    StateMachine)
+                                    StateMachine
+                                    Decorator)
 

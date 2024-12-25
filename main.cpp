@@ -1,6 +1,7 @@
 #include <iostream>
 #include "StateMachine/StateMachine.hh"
 #include "Factory/Factory.hh"
+#include "Decorator/Decorator.hh"
 
 #include "Consts.hh"
 
@@ -16,6 +17,8 @@ void welcome_menu() {
             state_machine_test();
         } else if (input == "2") {
             factory_test();
+        } else if (input == "3") {
+            decorator_test();
         } else if (input == "Exit") {
             exit(0);
         } else {
