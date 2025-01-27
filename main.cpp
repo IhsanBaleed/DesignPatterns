@@ -2,6 +2,7 @@
 #include "StateMachine/StateMachine.hh"
 #include "Factory/Factory.hh"
 #include "Decorator/Decorator.hh"
+#include "Builder/Builder.hh"
 
 #include "Consts.hh"
 
@@ -19,6 +20,8 @@ void welcome_menu() {
             factory_test();
         } else if (input == "3") {
             decorator_test();
+        } else if (input == "4") {
+            builder_test();
         } else if (input == "Exit") {
             exit(0);
         } else {
