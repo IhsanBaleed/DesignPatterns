@@ -6,6 +6,7 @@ add_subdirectory(StateMachine)
 add_subdirectory(Factory)
 add_subdirectory(Decorator)
 add_subdirectory(Builder)
+add_subdirectory(Singelton)
 
 add_executable(DesignPattern main.cpp)
 
@@ -13,5 +14,6 @@ target_link_libraries(DesignPattern PUBLIC
                                     Factory
                                     StateMachine
                                     Decorator
-                                    Builder)
+                                    Builder
+                                    Singelton)
 

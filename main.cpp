@@ -3,6 +3,7 @@
 #include "Factory/Factory.hh"
 #include "Decorator/Decorator.hh"
 #include "Builder/Builder.hh"
+#include "Singelton/Singelton.hh"
 
 #include "Consts.hh"
 
@@ -22,6 +23,8 @@ void welcome_menu() {
             decorator_test();
         } else if (input == "4") {
             builder_test();
+        } else if (input == "5") {
+            singelton_test();
         } else if (input == "Exit") {
             exit(0);
         } else {
