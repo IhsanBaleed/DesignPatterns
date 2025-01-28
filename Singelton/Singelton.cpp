@@ -9,6 +9,9 @@ void singelton_test() {
     Singelton* s = Singelton::get_instance();
 
     std::cout << s->get_data() << std::endl;
+
+    Singelton& s1 = *Singelton::get_instance(); // you can also use it through a ref var
+
 }
 
 Singelton::Singelton(std::string data) {

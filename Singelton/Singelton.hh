@@ -36,6 +36,7 @@ public:
     Singelton(Singelton&) = delete; 
     void operator=(const Singelton&) = delete;
 
+    // the method must be static, non-static methods must be called through an object
     static Singelton* get_instance();
 
     std::string get_data();
