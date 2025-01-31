@@ -4,6 +4,10 @@
 #include <memory>
 #include <list>
 
+
+// Use this pattern when you want the user to extend your code
+// Use it to save system resources by reusing current objects
+
 class Product {
 
 public:
