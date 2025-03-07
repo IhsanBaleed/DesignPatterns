@@ -10,5 +10,6 @@ std::string menu = "\nWelcome to Design Patterns in Modern C++\n"
                    "4. Buidler Pattern\n"
                    "5. Singelton Pattern\n"
                    "6. Abstract Factory\n"
+                   "7. Prototype Pattern\n"
                    "type Exit to quit\n";
 

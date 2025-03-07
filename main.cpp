@@ -5,6 +5,7 @@
 #include "Builder/Builder.hh"
 #include "Singelton/Singelton.hh"
 #include "AbstractFactory/AbstractFactory.hh"
+#include "Prototype/Prototype.hh"
 
 #include "Consts.hh"
 
@@ -28,6 +29,8 @@ void welcome_menu() {
             singelton_test();
         } else if (input == "6") {
             abstract_factory_test();
+        } else if (input == "7") {
+            prototype_test();
         } else if (input == "Exit") {
             exit(0);
         } else {
